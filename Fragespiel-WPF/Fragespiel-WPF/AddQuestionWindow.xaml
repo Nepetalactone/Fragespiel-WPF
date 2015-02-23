@@ -1,0 +1,16 @@
+﻿<Window x:Class="Fragespiel_WPF.AddQuestionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AddQuestionWindow" Height="600" Width="800" WindowState="Maximized">
+    <Grid>
+        <Label Content="Frage:" HorizontalAlignment="Center" Margin="135,55,452,405" VerticalAlignment="Center" FontSize="72" Height="110" Width="205"/>
+        <Label Content="Antwort:" HorizontalAlignment="Center" Margin="58,173,425,287" VerticalAlignment="Center" FontSize="72" Height="110" Width="309"/>
+        <Label Content="Bereich:" HorizontalAlignment="Center" Margin="78,279,437,173" VerticalAlignment="Center" FontSize="72" Height="110" Width="277"/>
+        <TextBox HorizontalAlignment="Center" Name="QuestionBox" Height="110" Margin="345,55,88,405" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="359" FontSize="36"/>
+        <TextBox HorizontalAlignment="Center" Name="AnswerBox" Height="110" Margin="345,198,88,292" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="359" FontSize="36"/>
+        <TextBox HorizontalAlignment="Center" Name="TopicBox" Height="110" Margin="345,304,88,186" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="359" FontSize="36"/>
+        <Button Content="Frage hinzufügen" HorizontalAlignment="Center" Margin="47,419,367,71" VerticalAlignment="Center" Width="378" Height="80" FontSize="48" Click="AddQuestion_Click"/>
+        <Button Content="Zurück" HorizontalAlignment="Center" Margin="441,419,88,71" VerticalAlignment="Center" Width="263" Height="80" FontSize="48" Click="BackButton_Click"/>
+
+    </Grid>
+</Window>
