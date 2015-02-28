@@ -32,9 +32,10 @@ namespace Fragespiel_WPF
 
         private void AddQuestion_Click(object sender, RoutedEventArgs e)
         {
-            if (QuestionBox.Text != String.Empty && AnswerBox.Text != String.Empty && TopicBox.Text != String.Empty)
+            int points;
+            if (QuestionBox.Text != String.Empty && PointBox.Text != String.Empty && TopicBox.Text != String.Empty && Int32.TryParse(PointBox.Text, out points))
             {
-                QuestionPool.Instance.Add(QuestionBox.Text, AnswerBox.Text, TopicBox.Text);
+                QuestionPool.Instance.Add(QuestionBox.Text, points, TopicBox.Text);
             }
         }
     }

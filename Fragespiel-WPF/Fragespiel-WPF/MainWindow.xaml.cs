@@ -27,9 +27,8 @@ namespace Fragespiel_WPF
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            GameWindow game = new GameWindow();
+            QuestionChooseWindow game = new QuestionChooseWindow();
             game.Show();
-            game.Start();
             Hide();
         }
 

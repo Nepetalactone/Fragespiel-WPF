@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Fragespiel_WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="600" Width="800" WindowState="Maximized">
+        Title="Fragespiel" Height="600" Width="800" WindowState="Maximized">
     <Grid>
         <Button Content="Spielen" HorizontalAlignment="Center" Margin="0,0,0,225" VerticalAlignment="Center" Width="400" Height="100" Click="PlayButton_Click" FontSize="48"/>
         <Button Content="Frage hinzufügen" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="400" Height="100" Click="AddQuestionButton_Click" FontSize="48"/>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Windows;
 using System.Xml.Serialization;
 
 namespace Fragespiel_WPF
@@ -32,14 +33,19 @@ namespace Fragespiel_WPF
             _questions.AddRange(DeserializeQuestions());
             _rand = new Random();
         }
-        public void Add(String question, String answer, String topic)
+        public void Add(String question, int points, String topic)
         {
-            _questions.Add(new QuestionAnswerPair(question, answer, topic));
+            _questions.Add(new QuestionAnswerPair(question, points, topic));
         }
 
         public String[] GetTopics()
         {
             return _questions.Where(q => q.isTaken == false).GroupBy(q => q.Topic).Select(q => q.First().Topic).ToArray();
+        }
+
+        public int[] GetPoints()
+        {
+            return _questions.OrderBy(q => q.Points).GroupBy(q => q.Points).Select(q => q.First().Points).ToArray();
         }
 
         public QuestionAnswerPair GetRandomQuestion(String topic)
@@ -73,13 +79,28 @@ namespace Fragespiel_WPF
 
             foreach (FileInfo file in xmlFiles)
             {
-                using (FileStream filestream = new FileStream(file.FullName, FileMode.Open))
+                try
                 {
-                    qList.Add((QuestionAnswerPair)serializer.Deserialize(filestream));
+                    using (FileStream filestream = new FileStream(file.FullName, FileMode.Open))
+                    {
+                        qList.Add((QuestionAnswerPair) serializer.Deserialize(filestream));
+                    }
+                }
+                catch (InvalidOperationException i)
+                {
+                    MessageBox.Show("XML-Deserialisierung fehlgeschlagen", "Fehler", MessageBoxButton.OK,
+                        MessageBoxImage.Error);
                 }
             }
 
             return qList.ToArray();
+        }
+
+        public QuestionAnswerPair GetQuestionByTopicAndAnswer(string topic, int points)
+        {
+            QuestionAnswerPair question = _questions.Find((x) => x.Topic == topic && x.Points == points);
+            question.isTaken = true;
+            return question;
         }
     }
 }

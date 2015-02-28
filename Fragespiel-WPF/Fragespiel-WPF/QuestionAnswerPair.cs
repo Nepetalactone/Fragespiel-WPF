@@ -7,7 +7,7 @@ namespace Fragespiel_WPF
     public class QuestionAnswerPair
     {
         public String Question { get; set; }
-        public String Answer { get; set; }
+        public int Points { get; set; }
         public String Topic { get; set; }
 
         [XmlIgnore]
@@ -17,10 +17,10 @@ namespace Fragespiel_WPF
 
         }
 
-        public QuestionAnswerPair(String question, String answer, String topic)
+        public QuestionAnswerPair(String question, int points, String topic)
         {
             Question = question;
-            Answer = answer;
+            Points = points;
             Topic = topic;
             isTaken = false;
             Serialize();
@@ -29,7 +29,7 @@ namespace Fragespiel_WPF
         private void Serialize()
         {
             XmlSerializer x = new XmlSerializer(this.GetType());
-            TextWriter writer = new StreamWriter(Topic + Guid.NewGuid() + ".xml");
+            TextWriter writer = new StreamWriter(Topic + Points + "-" + Guid.NewGuid() + ".xml");
             x.Serialize(writer, this);
         }
     }

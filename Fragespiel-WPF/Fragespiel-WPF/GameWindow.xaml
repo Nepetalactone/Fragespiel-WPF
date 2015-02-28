@@ -3,10 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="GameWindow" Height="600" Width="800" WindowState="Maximized">
     <Grid>
-        <Label Name="lblChoose" Content="Gruppe x, wählen Sie ein Thema:" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="48"/>
-        <ComboBox Name="cmbChoose" HorizontalAlignment="Left" Margin="48,79,0,0" VerticalAlignment="Top" Width="696" FontSize="36" SelectionChanged="cmbChoose_SelectionChanged"/>
-        <Label Name="lblQuestion" Content="Frage" HorizontalAlignment="Left" Margin="48,138,0,0" VerticalAlignment="Top" FontSize="48" Width="696" Height="257"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="48,400,0,0" VerticalAlignment="Top" Width="350" Height="160" BorderBrush="Red" Background="Red" Click="FalseButton_Click"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="417,400,0,0" VerticalAlignment="Top" Width="350" Height="160" Background="Green" Click="CorrectButton_Click"/>
+        <TextBlock Name="txtBlockQuestion" TextWrapping="WrapWithOverflow" Text="" HorizontalAlignment="Left" Margin="48,10,0,0" VerticalAlignment="Top" FontSize="48" Width="696" Height="385"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top" Width="370" Height="160" Background="Red" Click="FalseButton_Click"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="412,400,0,0" VerticalAlignment="Top" Width="370" Height="160" Background="Green" Click="CorrectButton_Click" />
     </Grid>
 </Window>

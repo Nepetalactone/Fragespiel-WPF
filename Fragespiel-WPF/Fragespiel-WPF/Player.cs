@@ -4,7 +4,8 @@ namespace Fragespiel_WPF
 {
     class Player
     {
-        public String Name { get; private set; }
+        public readonly String Name;
+
         public int Points { get; set; }
 
         public Player(String name)
